@@ -28,13 +28,15 @@ var Controller = [
   '$routeParams',
   'Views',
   '$translate',
+  'AuthorizationResource',
   function(
     $scope,
     page,
     $location,
     $routeParams,
     Views,
-    $translate
+    $translate,
+    AuthorizationResource
   ) {
 
     $scope.$root.showBreadcrumbs = true;
@@ -65,6 +67,18 @@ var Controller = [
       var path = $location.absUrl();
       return path.indexOf(link) != -1 ? 'active' : '';
     };
+
+    /*AuthorizationResource.query({
+      resourceType :  $scope.selectedResourceType,
+      firstResult:    ($scope.pages.current - 1) * $scope.pages.size,
+      maxResults:     $scope.pages.size
+    }).$promise.then(function(response) {
+      $scope.isAuthorized = true;
+    }, reqError);
+
+    $scope.isAuthorized = function() {
+      return ;
+    }*/
 
   }];
 
