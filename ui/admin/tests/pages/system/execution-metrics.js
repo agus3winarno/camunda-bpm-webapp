@@ -21,6 +21,10 @@ var Page = require('./system-base');
 
 module.exports = Page.extend({
 
+  auth:  {
+    permission: 'READ',
+    resource: 'authorization'
+  },
   url: '/camunda/app/admin/default/#/system?section=system-settings-metrics',
 
   flowNodesResult: function() {

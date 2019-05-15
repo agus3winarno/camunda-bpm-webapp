@@ -3,7 +3,10 @@
   <aside>
     <ul>
       <li ng-class="activeClass('section='+systemSettingsProvider.id)"
-          ng-repeat="systemSettingsProvider in systemSettingsProviders">
+          ng-repeat="systemSettingsProvider in systemSettingsProviders"
+          show-if-authorized
+          auth-permission="systemSettingsProvider.permission"
+          auth-resource-name="systemSettingsProvider.resource">
         <a href="#/system/?section={{systemSettingsProvider.id}}">
           {{systemSettingsProvider.label | translate}}
         </a>
