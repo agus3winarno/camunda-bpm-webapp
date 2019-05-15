@@ -104,6 +104,10 @@ module.exports = ['ViewsProvider', function PluginConfiguration(ViewsProvider) {
 
   ViewsProvider.registerDefaultView('admin.system', {
     id: 'system-settings-metrics',
+    auth:  {
+      permission: 'READ',
+      resource: 'authorization'
+    },
     label: 'EXECUTION_METRICS',
     template: template,
     controller: Controller,
