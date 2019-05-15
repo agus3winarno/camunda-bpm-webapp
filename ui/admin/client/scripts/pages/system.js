@@ -29,16 +29,16 @@ var Controller = [
   '$location',
   '$routeParams',
   'Views',
-  '$translate',/*,
-  'AuthorizationResource',*/
+  '$translate',
+  '$injector',
   function(
     $scope,
     page,
     $location,
     $routeParams,
     Views,
-    $translate/*,
-    AuthorizationResource*/
+    $translate,
+    $injector
   ) {
 
     $scope.$root.showBreadcrumbs = true;
